@@ -17,8 +17,7 @@ router.post("/", async (req, res) => {
     if (!user) return res.status(400).json({ message: "Name don't exist..." });
 
     sendMail.sendMailAdvert(userAdvert,user,req.body.advert)
-
-    return 
+    return res.status(200).json('success');
   } catch (error) {
     res.send("An error occured");
     console.log(error);

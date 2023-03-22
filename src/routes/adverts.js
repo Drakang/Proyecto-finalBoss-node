@@ -37,7 +37,7 @@ router.get("/:id", async (req, res, next) => {
 
 router.get("/user/:name", async (req, res, next) => {
   try {
-    const name = req.params.userOwner;
+    const name = req.params.name;
 
     const adverts = await Advert.find({ userOwner: name });
     res.json({ results: adverts });
